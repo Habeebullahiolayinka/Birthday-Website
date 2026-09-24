@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+
+@theme {
+  --font-display: "Playfair Display", serif;
+  --font-body: "Poppins", sans-serif;
+
+  --color-blush: #fff1f2;
+  --color-petal: #fecdd3;
+  --color-rose-deep: #be123c;
+  --color-gold: #f59e0b;
+  --color-ink: #4c0519;
+
+  --animate-fade-up: fade-up 0.8s ease-out both;
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-glow: glow 2.5s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-16px);
+    }
+  }
+
+  @keyframes glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgb(190 18 60 / 0.4);
+    }
+
+    50% {
+      box-shadow: 0 0 0 12px rgb(190 18 60 / 0);
+    }
+  }
+
+  --animate-confetti: confetti-fall 3s ease-in forwards;
+
+  @keyframes confetti-fall {
+    from {
+      transform: translateY(-10vh) rotate(0deg);
+      opacity: 1;
+    }
+
+    to {
+      transform: translateY(110vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+}
